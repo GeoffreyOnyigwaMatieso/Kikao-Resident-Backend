@@ -1,3 +1,4 @@
+
 source "https://rubygems.org"
 
 # An object-relational mapper
@@ -27,8 +28,6 @@ group :development do
   gem "sqlite3", "~> 1.4"
   gem "rerun"
 end
-
-#uncomment during production for production 
-# group :production do
-#   gem "pg"
-# end
+group :production do
+  gem "pg"
+end
