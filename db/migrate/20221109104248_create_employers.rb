@@ -1,4 +1,4 @@
-class CreateEmployeers < ActiveRecord::Migration[6.1]
+class CreateEmployers < ActiveRecord::Migration[6.1]
   def change
     create_table :employers do |t|
       t.string :name
