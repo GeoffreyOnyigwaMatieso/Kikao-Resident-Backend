@@ -106,6 +106,62 @@ delete '/employees/:id' do
 end
 
 
+ # lands table
+ get '/land' do
+  land = Land.all.order(:location)
+  land = Land.all.order(:land_use)
+  land.to_json
+end
+
+ #Search an land
+ get '/land/:id' do
+  land = Land.find(params[:id])
+  land.to_json
+end
+
+# performing a post 
+
+post '/land' do
+land = Land.create(
+  name: params[:location],
+  land_use: params[:land_use]
+
+)
+land.to_json
+end
+
+#performing a patch on a id
+patch '/land/:id' do
+patched = Land.create(params[:id])
+patched.update(
+  location: params[:location],
+  land_use: params[:land_use]
+)
+patched.to_json
+end
+
+#performing a patch on Lands
+patch '/land/' do
+patched = Land.create(params[:id])
+patched.update(
+  name: params[:name],
+  occupation: params[:occupation]
+)
+patched.to_json
+end
+
+#deleting an Id
+delete '/land/:id' do
+deleted = Land.find(params[:id])
+puts deleted
+deleted.destroy
+deleted.to_json
+end
+
+
+
+
+
 
 
 
