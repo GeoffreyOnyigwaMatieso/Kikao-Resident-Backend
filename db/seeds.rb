@@ -71,7 +71,4 @@ land3 = Land.create(
     
     )
 
-
-
-
 puts "🌱 Done seeding!"
