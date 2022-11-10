@@ -10,25 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version:2022_11_10_083045) do
+ActiveRecord::Schema.define(version: 2022_11_10_083154) do
 
   create_table "employees", force: :cascade do |t|
     t.string "name"
-    t.integer "EmployeesID"
-    t.string "Occupation"
+    t.integer "employee_id"
+    t.string "occupation"
+  end
+
+  create_table "employers", force: :cascade do |t|
+    t.string "name"
+    t.integer "employee_id"
+    t.string "occupation"
   end
 
   create_table "lands", force: :cascade do |t|
-    t.integer "LandID"
-    t.string "Location"
-    t.integer "Size"
-    t.string "LandUse"
+    t.integer "land_id"
+    t.string "location"
+    t.integer "size"
+    t.string "land_use"
   end
 
   create_table "residents", force: :cascade do |t|
     t.string "name"
-    t.integer "ResidentID"
-    t.string "Occupation"
+    t.integer "residents_id"
+    t.string "occupation"
   end
 
 end
