@@ -41,10 +41,10 @@ employees3 =Employees.create(name: "Timame Timame",employee_id:rand(1..10),occup
 
 
 
-# puts "Creating Residents"
-# residents1 =Residents.create(name: "Lorine Otieno",residents_id1:rand(1..10),occupation:"Cleaner")
-# residents2 =Residents.create(name: "Michele njuguna",residents_id2:rand(1..10),occupation:"Welder")
-# residents3 =Residents.create(name: "Timame Timame",residents_id3:rand(1..10),occupation:"Smith")
+puts "Creating Residents"
+residents1 =Residents.create(name: "Lorine Otieno",residents_id:rand(1..10),occupation:"Cleaner")
+residents2 =Residents.create(name: "Michele njuguna",residents_id:rand(1..10),occupation:"Welder")
+residents3 =Residents.create(name: "Timame Timame",residents_id:rand(1..10),occupation:"Smith")
 
 
 puts "Creating Land"
