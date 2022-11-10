@@ -31,3 +31,11 @@ end
 group :production do
   gem "pg"
 end
+
+# NOTES DURING INSTALLATION
+# IF YOU RUN TO Gem::Ext::BuildError: ERROR:  Failed to build gem native extension.  or 
+# An error occurred while installing pg (1.4.4), and Bundler cannot continue.
+
+#  AN ERROR AFTER DOING BUNDLE INSTALL . 
+# PLEASE DO THE FOLLOWING 
+# *sudo apt install libpq-dev*
