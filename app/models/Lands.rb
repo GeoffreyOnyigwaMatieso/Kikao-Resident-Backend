@@ -1,5 +1,5 @@
 class Land < ActiveRecord::Base
-    belongs_to :Residents
-    belongs_to  :Employers
-    belongs_to  :Employees
+    belongs_to :residents
+    belongs_to  :employers
+    belongs_to  :employees
 end
