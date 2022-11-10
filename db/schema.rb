@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2022_11_10_083154) do
 
   create_table "employers", force: :cascade do |t|
     t.string "name"
-    t.integer "employee_id"
+    t.integer "employers_id"
     t.string "occupation"
   end
 
