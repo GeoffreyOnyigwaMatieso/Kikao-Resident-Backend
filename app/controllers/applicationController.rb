@@ -54,6 +54,110 @@ delete '/employers/:id' do
 end
 
 
+  # employees table
+  get '/employees' do
+    employees = Employees.all.order(:name)
+    employees = Employees.all.order(:occupation)
+    employees.to_json
+  end
+
+   #Search an employees
+   get '/employees/:id' do
+    employees = Employees.find(params[:id])
+    employees.to_json
+  end
+
+  # performing a post 
+
+post '/employees' do
+  employees = Employees.create(
+    name: params[:name],
+    occupation: params[:occupation]
+  )
+  employees.to_json
+end
+
+#performing a patch on a id
+patch '/employees/:id' do
+  patched = Employees.create(params[:id])
+  patched.update(
+    name: params[:name],
+    occupation: params[:occupation]
+  )
+  patched.to_json
+end
+
+#performing a patch on employees
+patch '/employees/' do
+  patched = Employees.create(params[:id])
+  patched.update(
+    name: params[:name],
+    occupation: params[:occupation]
+  )
+  patched.to_json
+end
+
+#deleting an Id
+delete '/employees/:id' do
+  deleted = Employees.find(params[:id])
+  puts deleted
+  deleted.destroy
+  deleted.to_json
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 end
 
