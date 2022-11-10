@@ -106,14 +106,14 @@ delete '/employees/:id' do
 end
 
 
- # lands table
+ # Lands create table 
  get '/land' do
-  land = Land.all.order(:location)
-  land = Land.all.order(:land_use)
+  land = Land.all.order(:name)
+  land = Land.all.order(:occupation)
   land.to_json
 end
 
- #Search an land
+ #Search  a Land
  get '/land/:id' do
   land = Land.find(params[:id])
   land.to_json
@@ -134,7 +134,7 @@ end
 patch '/land/:id' do
 patched = Land.create(params[:id])
 patched.update(
-  location: params[:location],
+  name: params[:location],
   land_use: params[:land_use]
 )
 patched.to_json
@@ -158,7 +158,57 @@ deleted.destroy
 deleted.to_json
 end
 
+# Residents table
+get '/residents' do
+  residents = Residents.all.order(:location)
+  residents = Residents.all.order(:land_use)
+  residents.to_json
+end
 
+ #Search an resident
+ get '/residents/:id' do
+  residents = Residents.find(params[:id])
+  residents.to_json
+end
+
+# performing a post 
+
+post '/residents' do
+resident = Residents.create(
+  name: params[:name],
+  occupation: params[:occupation]
+
+)
+resident.to_json
+end
+
+#performing a patch on a id
+patch '/residents/:id' do
+patched = Residents.create(params[:id])
+patched.update(
+  name: params[:name],
+  occupation: params[:occupation]
+)
+patched.to_json
+end
+
+#performing a patch on residents
+patch '/residents/' do
+patched = Residents.create(params[:id])
+patched.update(
+  name: params[:name],
+  occupation: params[:occupation]
+)
+patched.to_json
+end
+
+#deleting an Id
+delete '/residents/:id' do
+deleted = Residents.find(params[:id])
+puts deleted
+deleted.destroy
+deleted.to_json
+end
 
 
 
